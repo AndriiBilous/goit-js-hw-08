@@ -89,13 +89,12 @@ container.addEventListener("click", modalImage);
 
 function modalImage(event) {
   event.preventDefault();
-
-  const original = event.target.dataset.source;
-  const instance = basicLightbox.create(`
-        <img src="${original}" width="800" height="600">
-    `);
   if (event.target.nodeName !== "IMG") {
     return;
   }
+  const original = event.target.dataset.source;
+  const instance = basicLightbox.create(`
+        <img src="${original}" >
+    `);
   instance.show();
 }
